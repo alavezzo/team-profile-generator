@@ -27,8 +27,13 @@ test('getEmail returns email', () => {
     expect(engineer.getEmail()).toBe('mark@gmail.com');
 });
 
+test('getGithub() returns github username', () => {
+    const engineer = new Engineer('Mark', 129312, 'mark@gmail.com', 'markiscool')
 
-test('getRole returns Engineer', () => {
+    expect(engineer.getGithub()).toBe('markiscool');
+});
+
+test('getRole() returns Engineer', () => {
     const engineer = new Engineer('Mark', 129312, 'mark@gmail.com')
 
     expect(engineer.getRole()).toBe('Engineer');
