@@ -15,20 +15,25 @@ test('getName returns name', () => {
     expect(intern.getName()).toBe('Mark');
 });
 
-test('getID returns ID', () => {
+test('getID() returns ID', () => {
     const intern = new Intern('Mark', 129312, 'mark@gmail.com')
 
     expect(intern.getId()).toBe(129312);
 });
 
-test('getEmail returns email', () => {
+test('getEmail() returns email', () => {
     const intern = new Intern('Mark', 129312, 'mark@gmail.com')
 
     expect(intern.getEmail()).toBe('mark@gmail.com');
 });
 
+test('getSchool() returns school', () => {
+    const intern = new Intern('Mark', 129312, 'mark@gmail.com', 'UCSB')
 
-test('getRole returns Intern', () => {
+    expect(intern.getSchool()).toBe('UCSB');
+});
+
+test('getRole() returns Intern', () => {
     const intern = new Intern('Mark', 129312, 'mark@gmail.com')
 
     expect(intern.getRole()).toBe('Intern');

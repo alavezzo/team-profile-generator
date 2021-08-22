@@ -10,25 +10,25 @@ test('creates an employee Object', () => {
     expect(employee.email).toBe('mark@gmail.com')
 });
 
-test('getName returns name', () => {
+test('getName() returns name', () => {
     const employee = new Employee('Mark', 129312, 'mark@gmail.com')
 
     expect(employee.getName()).toBe('Mark');
 });
 
-test('getID returns ID', () => {
+test('getID() returns ID', () => {
     const employee = new Employee('Mark', 129312, 'mark@gmail.com')
 
     expect(employee.getId()).toBe(129312);
 });
 
-test('getEmail returns email', () => {
+test('getEmail() returns email', () => {
     const employee = new Employee('Mark', 129312, 'mark@gmail.com')
 
     expect(employee.getEmail()).toBe('mark@gmail.com');
 });
 
-test('getRole returns Employee', () => {
+test('getRole() returns Employee', () => {
     const employee = new Employee('Mark', 129312, 'mark@gmail.com')
 
     expect(employee.getRole()).toBe('Employee');
