@@ -1,3 +1,3 @@
-const Employee = require('./lib/Employee')
+const prompt = require('./src/inquirer')
 
-new Employee();
+prompt();
