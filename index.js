@@ -1,3 +1,3 @@
-const Team = require('./src/inquirer')
+const Team = require('./lib/Team')
 
 new Team().buildTeam()
