@@ -1,3 +1,3 @@
-const prompt = require('./src/inquirer')
+const Team = require('./src/inquirer')
 
-prompt();
+new Team().buildTeam()

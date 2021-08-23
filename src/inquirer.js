@@ -1,7 +1,16 @@
 const inquirer = require('inquirer')
+const Manager = require('../lib/Manager')
+const Engineer = require('../lib/Engineer')
+const Intern = require('../lib/Intern')
 
-const promptUser = () => {
-    return inquirer.prompt([
+function Team () {
+    this.manager
+    this.engineers = []
+    this.interns = [];
+}
+
+Team.prototype.addManager = function() {
+    inquirer.prompt([
         {
             type: "input",
             message: "Enter the team Manager's name",
@@ -22,21 +31,32 @@ const promptUser = () => {
             message: "Enter the manager's office number.",
             name: 'officeNumber'
         }
-        ])
+        ]).then(({name, id, email, officeNumber}) => {
+            this.manager = new Manager (name, id, email, officeNumber)
+            this.confirmAdd();
+        })
 };
 
-const promptAddTeamMember = () => {
-    return inquirer.prompt([
+ Team.prototype.confirmAdd = function() {
+    inquirer.prompt([
 {
     type: "list",
     message: "Would you like to add a member to the team?",
     name: "teamMember",
     choices: ['Add Engineer', 'Add Intern', 'Finished building team']
 }
-])
-};
+]).then(data => {
+    if (data.teamMember === 'Add Engineer') {
+        this.addEngineer();
+    } else if (data.teamMember === 'Add Intern') {
+        this.addIntern();
+    } else {
+        console.log('Your team is complete! Visit /dist/index.html to see the finished product!')
+    }
+})
+}
 
-const promptEngineer = () => {
+Team.prototype.addEngineer = function () {
     return inquirer.prompt([
     {
         type: "input",
@@ -58,10 +78,13 @@ const promptEngineer = () => {
         message: "Enter the engineer's github username.",
         name: 'github'
     }
-    ])
-}
+    ]).then(({name, id, email, github}) => {
+        this.engineers.push(new Engineer (name, id, email, github))
+        this.nextTeamMate();
+    })
+};
 
-const promptIntern = () => {
+Team.prototype.addIntern = function () {
     return inquirer.prompt([
     {
         type: "input",
@@ -83,25 +106,18 @@ const promptIntern = () => {
         message: "Enter the intern's school.",
         name: 'school'
     }
-    ])
-}
-
-const promptNextTeamMate = () => {
-    promptAddTeamMember()
-    .then(data => {
-        if (data.teamMember === 'Add Engineer') {
-            promptEngineer().then(promptNextTeamMate)
-        } else if (data.teamMember === 'Add Intern') {
-            promptIntern().then(promptNextTeamMate)
-        } else {
-            console.log('Your team is complete! Visit /dist/index.html to see the finished product!')
-        }
+    ]).then(({name, id, email, school}) => {
+        this.interns.push = new Intern (name, id, email, school)
+        this.nextTeamMate();
     })
 }
 
-const buildTeam = () => {
-    promptUser()
-    .then(promptNextTeamMate)
-}
+Team.prototype.nextTeamMate = function() {
+        this.confirmAdd()
+    };
 
-module.exports = buildTeam
+Team.prototype.buildTeam = function() {
+    this.addManager();
+};
+
+module.exports = Team
