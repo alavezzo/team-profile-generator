@@ -1,9 +1,8 @@
 const managerCard = teamData => {
     let manager = teamData.manager
     let {name, id, email, officeNumber } = manager
-    console.log(name)
-    console.log(id)
-    return `<div class="card" style="width: 18rem;">
+
+    return `<div class="card col-sm-6 col-med-4 col-lg-3" style="width: 18rem;">
        <div class="card-body">
          <h5 class="card-title">Manager</h5>
        <p class="card-text">${name}</p>
@@ -22,7 +21,7 @@ const engineerCard = teamData => {
     return `
         ${engineers.map(({ name, id, email, github }) => {
         return `
-            <div class="card" style="width: 18rem;">
+            <div class="card col-sm-6 col-med-4 col-lg-3" style="width: 18rem;">
             <div class="card-body">
             <h5 class="card-title">Engineer</h5>
             <p class="card-text">${name}</p>
@@ -41,11 +40,12 @@ const internCard = teamData => {
     if (teamData.interns.length > 0) { 
     let interns = teamData.interns
     return `
+
         ${interns.map(({ name, id, email, school }) => {
         return `
-            <div class="card" style="width: 18rem;">
+            <div class="card col-sm-6 col-med-4 col-lg-3" style="width: 18rem;">
             <div class="card-body">
-            <h5 class="card-title">Engineer</h5>
+            <h5 class="card-title">Intern</h5>
             <p class="card-text">${name}</p>
             </div>
             <ul class="list-group list-group-flush">
@@ -69,6 +69,7 @@ module.exports = teamData => {
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="./style.css" />
         <title>Document</title>
     </head>
     <body>
@@ -77,10 +78,13 @@ module.exports = teamData => {
             <h1 class="display-4">MY TEAM</h1>
       </div>
     </header>
-
+    <div class = "container">
+    <div class = "row">
     ${managerCard(teamData)}
     ${engineerCard(teamData)}
     ${internCard(teamData)}
+    </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
     </body>
