@@ -9,7 +9,7 @@ const managerCard = teamData => {
       </div>
        <ul class="list-group list-group-flush">
          <li class="list-group-item">Employee ID: ${id}</li>
-         <li class="list-group-item">Email: <a href="#" class="card-link">${email}</a></li>
+         <li class="list-group-item">Email: <a href="mailto: ${email}" class="card-link">${email}</a></li>
           <li class="list-group-item">Office Number: ${officeNumber}</li>
       </ul>
    </div>`
@@ -28,8 +28,8 @@ const engineerCard = teamData => {
             </div>
             <ul class="list-group list-group-flush">
             <li class="list-group-item">Employee ID: ${id}</li>
-            <li class="list-group-item">Email: <a href="#" class="card-link">${email}</a></li>
-            <li class="list-group-item">GitHub: <a href="#" class="card-link">${github}</a></li>
+            <li class="list-group-item">Email: <a href="mailto: ${email}" class="card-link">${email}</a></li>
+            <li class="list-group-item">GitHub: <a href="http://github.com/${github}" class="card-link">${github}</a></li>
             </ul>
         </div>`;
     }).join('')}
@@ -50,7 +50,7 @@ const internCard = teamData => {
             </div>
             <ul class="list-group list-group-flush">
             <li class="list-group-item">Emplyee ID: ${id}</li>
-            <li class="list-group-item">Email: <a href="#" class="card-link">${email}</a></li>
+            <li class="list-group-item">Email: <a href="mailto: ${email}" class="card-link">${email}</a></li>
             <li class="list-group-item">Education: ${school}</li>
             </ul>
         </div>`;
