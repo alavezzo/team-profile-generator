@@ -24,7 +24,7 @@
   Each prompt has validation attached to it. Employee ID only accepts a numerical value. Each prompt must be answered to proceed. If an input is not necessary, remove the validate lines from the code in lib/Team.js. Once each prompt is answered, the generated HTML file can be found in the /dist folder. 
   
   ## Test Instructions
-  Tests on this application are run using jest. To run these tests, enter 'npm run test' in the command line. Optionally you can specify the file you wish to run tests on by entering 'npm run test <fileName>'.
+  Tests on this application are run using jest. To run these tests, enter 'npm run test' in the command line. Optionally you can specify the file you wish to run tests on by entering 'npm run test {fileName}'.
   
   ## Questions 
   Link to my GitHub: [github.com/alavezzo](https://github.com/alavezzo)
