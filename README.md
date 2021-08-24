@@ -19,7 +19,8 @@
   ## Description
   This application logs information about employees on a software engineering team and generates a HTML website that displays an overview of the team. It operates on Node and uses Inquirer to recieve user input. Email-validator is used to validate email input. The application was created using object orientated code and TDD. Testing was performed using Jest.
   ## Instructions
-  Clone down the repository and run npm install to install the necessary dependencies. Once this is complete, enter 'node index' in your terminal to launch the application. 
+  Clone down the repository and run npm install to install the necessary dependencies. Once this is complete, enter 'node index' in your terminal to launch the application. Please watch the following video for a walkthrough of the app's functionality:
+  https://drive.google.com/file/d/1gMSxng8yqbtvQ2Pzk09dZBNe1QRrY-4i/view
   ## Usage
   Each prompt has validation attached to it. Employee ID only accepts a numerical value. Each prompt must be answered to proceed. If an input is not necessary, remove the validate lines from the code in lib/Team.js. Once each prompt is answered, the generated HTML file can be found in the /dist folder. 
   
